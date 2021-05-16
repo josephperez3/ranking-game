@@ -1,16 +1,18 @@
+.light {
+  --excolor: brown;
+}
+
+.dark {
+  --excolor: orange;
+}
+
+* button {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -24,15 +26,44 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Navbar.vue */
+.Navbar-container {
+  background-color: var(--excolor);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.Navbar-container .links {
+  margin: 0px;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  grid-column: span 1;
+  place-self: center;
+  text-align: left;
+}
+.Navbar-container .title {
+  margin: 0px;
+  color: white;
+  font-size: 2rem;
+  padding: 1.2rem;
+  grid-column: span 10;
+  text-align: left;
+}
+
+@media screen and (min-width: 600px) {
+  .Navbar-container h1 {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .Navbar-container .title {
+    font-size: 3rem;
   }
 }
