@@ -1,6 +1,6 @@
 import "./App.css";
-import Hello from "./components/Hello";
 import Navbar from "./components/Navbar";
+import ChoiceCard from "./components/ChoiceCard";
 import { useState } from "react";
 
 function App() {
@@ -11,24 +11,25 @@ function App() {
     setWords(["bonjour", ...words]);
     setDarkMode(!darkMode);
   };
+  const handleSubmit = () => {
+    console.log("hello");
+  };
 
   return (
     <div className={("App", darkMode ? "dark" : "light")}>
       <Navbar />
       <header className="App-header">
         <button onClick={changeWords}>arist</button>
-        {words.map((word) => {
-          return (
-            <div>
-              <Hello msg={word} />
-              <h4>test</h4>
-            </div>
-          );
-        })}
-        {/* {[<h1>Gang</h1>, <h1>Chains</h1>, <h1>Drugs</h1>]} */}
-        <h1>Gang</h1>
-        <h1>Chains</h1>
-        <h1>Drugs</h1>
+        <div className="Choice-row">
+          <ChoiceCard
+            position="left"
+            imgSrc="https://static.wikia.nocookie.net/runescape2/images/5/56/Frog_%28NPC%29.png/revision/latest?cb=20160531202106"
+          />
+          <ChoiceCard
+            position="right"
+            imgSrc="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
+          />
+        </div>
       </header>
     </div>
   );

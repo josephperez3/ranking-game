@@ -3,8 +3,9 @@ const Navbar = () => {
     <div className="Navbar-container">
       <div className="row">
         <h1 className="title">Ranking Game</h1>
-        <h1 className="links">Home</h1>
-        <h1 className="links">Results</h1>
+        <h2 className="links">Home</h2>
+        <h2 className="links">About</h2>
+        <h2 className="links">Results</h2>
       </div>
     </div>
   );
