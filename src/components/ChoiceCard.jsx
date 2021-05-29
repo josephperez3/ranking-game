@@ -1,8 +1,12 @@
-const ChoiceCard = ({ position, imgSrc }) => {
+const ChoiceCard = ({ id, classes, imgSrc, flip }) => {
+  const handleClick = () => {
+    flip(id);
+  };
+
   return (
-    <div className={`Choice-card ${position}`}>
-      <img src={imgSrc} alt="contender" />
-      <button>This One</button>
+    <div className={`Choice-card ${classes}`}>
+      <img src={imgSrc} alt="contender"></img>
+      <button onClick={handleClick}>This One</button>
     </div>
   );
 };
