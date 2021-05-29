@@ -1,0 +1,103 @@
+.light {
+  --excolor: #8d7471;
+}
+
+.dark {
+  --excolor: #9f838c;
+}
+
+* button {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 0.25em;
+}
+
+/* Navbar.jsx */
+.Navbar-container {
+  background-color: var(--excolor);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .links {
+    margin: 0px;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    grid-column: span 1;
+    place-self: center;
+    text-align: left;
+  }
+
+  .title {
+    margin: 0px;
+    color: white;
+    font-size: 2rem;
+    padding: 1.2rem;
+    grid-column: span 9;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Navbar-container {
+    h1 {
+      font-size: 2rem;
+    }
+    .title {
+      font-size: 3rem;
+    }
+    .links {
+      padding: 1.2rem;
+    }
+  }
+}
+
+/* ChoiceCard.jsx */
+.Choice-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.25em;
+
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+
+  .flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.Choice-card {
+  grid-column: span 2;
+  padding: 20px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  backface-visibility: hidden;
+  transition: transform 2s;
+
+  img {
+    background-color: orange;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 55vh;
+  }
+}
